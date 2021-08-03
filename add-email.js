@@ -3,9 +3,8 @@ async function newFormHandler(event) {
     event.preventDefault();
     //create variables
     const mailTo = document.getElementById("mailto-box").value.trim();
-    const subject = docuemnt.getElementById("subject-box").value.trim();
+    const subject = document.getElementById("subject-box").value.trim();
     const msg = document.getElementById("msg-box").value.trim();
-    const submit = document.getElementById("submit-btn");
     //send fetch request to add a new email message
     const response = await fetch("/api/msg", {
         //here we're using POST method because we are CREATING or ADDING a new message to the database
