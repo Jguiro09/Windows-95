@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+<body>
+    <div class="containerMain">
+        <div id="titleDiv">
+            <p>
+                Minesweeper!
+            </p>
+            <button id="easy" style="display: inline-block">Easy 9x9</button>
+            <button id="med" style="display: inline-block">Medium 16x16</button>
+            <button id="hard" style="display: inline-block">Hard 16x30</button>
+        </div>
+        <div id="mainContent">
+            <table id=grid>
+            </table>
+        </div>
+        <button onclick="generateGrid();">Reset Grid</button>
+    </div>
+    <script src="Assets/js/minesweeper.js"></script>
+</body>
+</html>
