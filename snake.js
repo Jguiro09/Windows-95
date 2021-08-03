@@ -169,7 +169,7 @@ function move_snake() {
         // Increase score
         score += 10;
         // Display score on screen
-        document.getElementById('score').textContent += score;
+        document.getElementById('score').innerHTML = score;
         // Generate new food location
         generate_food();
     } else {
