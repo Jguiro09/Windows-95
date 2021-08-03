@@ -1,5 +1,5 @@
 const panel_border = 'black';
-const panel_background = "white";
+const panel_background = 'white';
 const snake_col = 'red';
 const snake_border = 'darkblue';
 
@@ -30,18 +30,23 @@ let dx = 10;
 let dy = 0;
 
 
-// Get the canvas element
+// canvas element
 const snakepanel = document.getElementById("snakepanel");
-// Return a two dimensional drawing context
+// Return two dimensional drawing
 const snakepanel_ctx = snakepanel.getContext("2d");
-// Start game
+const img = new Image();
+img.src = './assets/windows95clouds.jpg';
+img.onload = () => {
+        snakepanel_ctx.drawImage(img, 0, 0)
+    }
+    // Start
 main();
 
 generate_food();
 
 document.addEventListener("keydown", change_direction);
 
-// main function called repeatedly to keep the game running
+// main is called repeatedly to keep game running
 function main() {
 
     if (has_game_ended()) return;
@@ -52,21 +57,19 @@ function main() {
         drawFood();
         move_snake();
         drawSnake();
-        // Repeat
         main();
     }, 100)
 }
 
-// draw a border around the canvas
+// border around canvas
 function clear_board() {
-    //  Select the colour to fill the drawing
     snakepanel_ctx.fillStyle = panel_background;
-    //  Select the colour for the border of the canvas
     snakepanel_ctx.strokestyle = panel_border;
-    // Draw a "filled" rectangle to cover the entire canvas
+    // filled rectangle to cover the entire canvas
     snakepanel_ctx.fillRect(0, 0, snakepanel.width, snakepanel.height);
-    // Draw a "border" around the entire canvas
+    // border around the entire canvas
     snakepanel_ctx.strokeRect(0, 0, snakepanel.width, snakepanel.height);
+    snakepanel_ctx.drawImage(img, 0, 0);
 }
 
 // Draw the snake on the canvas
@@ -85,14 +88,14 @@ function drawFood() {
 // Draw one snake part
 function drawSnakePart(snakePart) {
 
-    // Set the colour of the snake part
+    // Color of the snake part
     snakepanel_ctx.fillStyle = snake_col;
-    // Set the border colour of the snake part
+    // Border color of the snake part
     snakepanel_ctx.strokestyle = snake_border;
     // Draw a "filled" rectangle to represent the snake part at the coordinates
     // the part is located
     snakepanel_ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
-    // Draw a border around the snake part
+    // Border around the snake part
     snakepanel_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 }
 
@@ -112,9 +115,9 @@ function random_food(min, max) {
 }
 
 function generate_food() {
-    // Generate a random number the food x-coordinate
+    // Generates a random number the food x-coordinate
     food_x = random_food(0, snakepanel.width - 10);
-    // Generate a random number for the food y-coordinate
+    // Generates a random number for the food y-coordinate
     food_y = random_food(0, snakepanel.height - 10);
     // if the new food location is where the snake currently is, generate a new food location
     snake.forEach(function has_snake_eaten_food(part) {
@@ -128,8 +131,6 @@ function change_direction(event) {
     const RIGHT_KEY = 39;
     const UP_KEY = 38;
     const DOWN_KEY = 40;
-
-    // Prevent the snake from reversing
 
     if (changing_direction) return;
     changing_direction = true;
@@ -167,9 +168,9 @@ function move_snake() {
     const food_eaten = snake[0].x === food_x && snake[0].y === food_y;
     if (food_eaten) {
         // Increase score
-        score += 10;
+        score++;
         // Display score on screen
-        document.getElementById('score').innerHTML = score;
+        document.getElementById('score').textContent = 'Score:' + score;
         // Generate new food location
         generate_food();
     } else {
