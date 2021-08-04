@@ -5,3 +5,7 @@
 .msg-box {}
 
 .submit {}
+
+.row {
+    border: 1px solid black;
+}
