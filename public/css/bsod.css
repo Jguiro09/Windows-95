@@ -1,0 +1,33 @@
+:root {
+    --primary: #000181;
+    --quatrinary: #6c6b67;
+    --light: #e3e4e3;
+  }
+  
+body{
+    background-color: var(--primary);
+} 
+#bsod{
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -100px;
+    width: 45%;
+}
+div h4, h5{
+    color: var(--light);
+    padding: 3px;
+}
+.window {
+    display: inline-flex;
+    background-color: var(--quatrinary);
+    padding: 10px;
+    margin-left: 40%;
+}
+li {
+    padding-left: 1%;
+    list-style-type: "*";
+    color: var(--light);
+    word-wrap: wrap;
+}
