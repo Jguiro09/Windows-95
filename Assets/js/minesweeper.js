@@ -230,7 +230,7 @@ medbtn.addEventListener('click', function () {
     }
   }
   resetbtn.style.display = "inline-block"
-  resetbtn.addEventListener('click', function() {
+  resetbtn.addEventListener('click', function () {
     seconds = 200;
     clearInterval(timerRun);
     timerRun = setInterval(function () {
@@ -246,7 +246,7 @@ medbtn.addEventListener('click', function () {
   })
 });
 hardbtn.addEventListener('click', function () {
-  var seconds = 300;
+  var seconds = 350;
   timerDiv.innerHTML = '';
 
   var timerRun = setInterval(function () {
@@ -347,7 +347,7 @@ hardbtn.addEventListener('click', function () {
     }
   }
   resetbtn.style.display = "inline-block"
-  resetbtn.addEventListener('click', function() {
+  resetbtn.addEventListener('click', function () {
     seconds = 300;
     clearInterval(timerRun);
     timerRun = setInterval(function () {

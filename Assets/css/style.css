@@ -44,7 +44,6 @@ BODY {
     margin: 12px;
   }
 
-  /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -58,7 +57,10 @@ BODY {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content/Box */
+#timer {
+  height: 18px;
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
@@ -72,7 +74,7 @@ BODY {
   animation-duration: 0.4s
 }
 
-/* The Close Button */
+
 .close {
   color: #aaa;
   float: right;
