@@ -1,0 +1,30 @@
+body, main {
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.myBody{
+    position: relative;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 15px;
+}
+
+.close{
+    opacity: 1;
+}
+
+.myLogin {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #018184;
+}
+
+.login {
+    width: 35%;
+}

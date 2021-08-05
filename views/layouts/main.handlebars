@@ -7,27 +7,12 @@
       <title>Win95</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="/src/pixel.css">
+      <link rel="stylesheet" type="text/css" href="/src/style.css">
     </head>
 
   <body>
-      <header id="header">
-        <h1>Welcome to the Four Seasons Museum</h1>
-      </header>
-      <nav id="home">
-        <a href="/">Home</a>
-        {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-      </nav>
       <main>
-        <aside id="little">
-          <h2>Enjoy the galleries!</h2>
-        </aside>
-        <div class="gallery">
           {{{body}}}
-        </div>
       </main>
       {{#if loggedIn}}
       <script src="/js/logout.js"></script>
