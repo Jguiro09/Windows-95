@@ -29,8 +29,20 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Game Over!<br>Your Score is:<div id="timerscore"></div><br>click Reset or another difficulty to try again.</p>
+            <p>Game Over!<br>Your Score is:
+            <div id="timerscore"></div>
+            <br><span id="hideName" style="display: none;">Your Name Here</span><br>
+            <form>
+                <input style="display: none" id="scoreName" type="text"><input style="display: none;" id="submitbtn" type="submit">
+            </form>
+            <br><br>
+            click Reset or another difficulty to try again.
+            </p>
         </div>
+    </div>
+    <div id="scoresDiv">
+        <h1 id="highscoresTEXT">Highscores:</h1>
+        <p id='scores' ></p>
     </div>
     <script src="Assets/js/minesweeper.js"></script>
 </body>

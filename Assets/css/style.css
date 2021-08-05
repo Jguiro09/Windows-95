@@ -1,8 +1,9 @@
-
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
 BODY {
     background: black;
     color: #DDDDDD;
-    font-family: courier new;
     text-align: center;
   }
   
@@ -74,7 +75,9 @@ BODY {
   animation-duration: 0.4s
 }
 
+#scoreName {
 
+}
 .close {
   color: #aaa;
   float: right;

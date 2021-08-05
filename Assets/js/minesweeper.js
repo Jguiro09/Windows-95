@@ -7,17 +7,23 @@ var hardbtn = document.getElementById('hard');
 var resetbtn = document.getElementById('reset');
 var timerScore = document.getElementById('timerscore');
 var timerDiv = document.getElementById('timer');
+var submitbtn = document.getElementById('submitbtn');
+var usernameInput = document.getElementById('scoreName');
+var highscoresDiv = document.getElementById('scoresDiv');
+var highscores = document.getElementById('scores');
+var highscoresTEXT = document.getElementById('highscoreTEXT');
+var hideYourNameHere = document.getElementById('hideName');
+let seconds = 0;
 
 easybtn.addEventListener('click', function () {
-  let seconds = 99;
   timerDiv.innerHTML = '';
 
   let timerRun = setInterval(function () {
-    if (seconds !== 0) {
-      timerDiv.textContent = `Timer: ${seconds--}`;
+    if (seconds !== 999) {
+      timerDiv.textContent = `Timer: ${seconds++}`;
     }
     else {
-      timerDiv.textContent = 'Timer: ' + 0;
+      timerDiv.textContent = `Timer: ${seconds}`;
       clearInterval(timerRun);
     }
   }, 1000);
@@ -71,6 +77,9 @@ easybtn.addEventListener('click', function () {
       revealMines();
       timerScore.innerText = seconds;
       clearInterval(timerRun);
+      usernameInput.style.display = 'inline-block'
+      submitbtn.style.display = 'inline-block'
+      hideYourNameHere.style.display = 'inline-block' 
       endScreen();
     }
   }
@@ -111,15 +120,13 @@ easybtn.addEventListener('click', function () {
 
     }
     checkLevelCompletion();
-    rightclickFlag(cell);
   }
   resetbtn.style.display = "inline-block"
   resetbtn.addEventListener('click', function () {
-    seconds = 99;
     clearInterval(timerRun);
     timerRun = setInterval(function () {
-      if (seconds !== 0) {
-        timerDiv.textContent = `Timer: ${seconds--}`;
+      if (seconds === 0) {
+        timerDiv.textContent = `Timer: ${seconds++}`;
       }
       else {
         timerDiv.textContent = 'Timer: ' + 0;
@@ -130,14 +137,13 @@ easybtn.addEventListener('click', function () {
   })
 });
 medbtn.addEventListener('click', function () {
-  var seconds = 200;
 
-  var timerRun = setInterval(function () {
-    if (seconds !== 0) {
-      timerDiv.textContent = `Timer: ${seconds--}`;
+  let timerRun = setInterval(function () {
+    if (seconds !== 999) {
+      timerDiv.textContent = `Timer: ${seconds++}`;
     }
     else {
-      timerDiv.textContent = 'Timer: ' + 0;
+      timerDiv.textContent = `Timer: ${seconds}`;
       clearInterval(timerRun);
     }
   }, 1000);
@@ -190,6 +196,9 @@ medbtn.addEventListener('click', function () {
       revealMines();
       timerScore.innerText = seconds;
       clearInterval(timerRun);
+      usernameInput.style.display = 'inline-block'
+      submitbtn.style.display = 'inline-block'
+      hideYourNameHere.style.display = 'inline-block' 
       endScreen();
     }
   }
@@ -231,11 +240,10 @@ medbtn.addEventListener('click', function () {
   }
   resetbtn.style.display = "inline-block"
   resetbtn.addEventListener('click', function () {
-    seconds = 200;
     clearInterval(timerRun);
     timerRun = setInterval(function () {
-      if (seconds !== 0) {
-        timerDiv.textContent = `Timer: ${seconds--}`;
+      if (seconds === 0) {
+        timerDiv.textContent = `Timer: ${seconds++}`;
       }
       else {
         timerDiv.textContent = 'Timer: ' + 0;
@@ -246,15 +254,12 @@ medbtn.addEventListener('click', function () {
   })
 });
 hardbtn.addEventListener('click', function () {
-  var seconds = 350;
-  timerDiv.innerHTML = '';
-
-  var timerRun = setInterval(function () {
-    if (seconds !== 0) {
-      timerDiv.textContent = `Timer: ${seconds--}`;
+  let timerRun = setInterval(function () {
+    if (seconds !== 999) {
+      timerDiv.textContent = `Timer: ${seconds++}`;
     }
     else {
-      timerDiv.textContent = 'Timer: ' + 0;
+      timerDiv.textContent = `Timer: ${seconds}`;
       clearInterval(timerRun);
     }
   }, 1000);
@@ -307,6 +312,9 @@ hardbtn.addEventListener('click', function () {
       revealMines();
       timerScore.innerText = seconds;
       clearInterval(timerRun);
+      usernameInput.style.display = 'inline-block';
+      submitbtn.style.display = 'inline-block';
+      hideYourNameHere.style.display = 'inline-block'; 
       endScreen();
     }
   }
@@ -362,15 +370,14 @@ hardbtn.addEventListener('click', function () {
     generateGrid();
   })
 });
-function rightclickFlag() {
-  document.addEventListener('contextmenu', function (ev) {
-    ev.preventDefault();
-    alert('success!');
-    return false;
-  }, false);
-}
 function endScreen() {
   // Get the modal
+  submitbtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    var userinput = usernameInput.value;
+    localStorage.setItem('Name', userinput);
+    localStorage.setItem('Score', seconds);
+  })
   var modal = document.getElementById("myModal");
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
