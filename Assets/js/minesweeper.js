@@ -16,8 +16,6 @@ var hideYourNameHere = document.getElementById('hideName');
 let seconds = 0;
 
 easybtn.addEventListener('click', function () {
-  timerDiv.innerHTML = '';
-
   let timerRun = setInterval(function () {
     if (seconds !== 999) {
       timerDiv.textContent = `Timer: ${seconds++}`;
@@ -27,6 +25,7 @@ easybtn.addEventListener('click', function () {
       clearInterval(timerRun);
     }
   }, 1000);
+  console.log(timerRun);
   generateGrid();
   function generateGrid() {
     //generate 9 by 9 grid
@@ -79,7 +78,7 @@ easybtn.addEventListener('click', function () {
       clearInterval(timerRun);
       usernameInput.style.display = 'inline-block'
       submitbtn.style.display = 'inline-block'
-      hideYourNameHere.style.display = 'inline-block' 
+      hideYourNameHere.style.display = 'inline-block'
       endScreen();
     }
   }
@@ -123,13 +122,13 @@ easybtn.addEventListener('click', function () {
   }
   resetbtn.style.display = "inline-block"
   resetbtn.addEventListener('click', function () {
+    seconds = 0
     clearInterval(timerRun);
     timerRun = setInterval(function () {
-      if (seconds === 0) {
+      if (seconds !== 999) {
         timerDiv.textContent = `Timer: ${seconds++}`;
       }
       else {
-        timerDiv.textContent = 'Timer: ' + 0;
         clearInterval(timerRun);
       }
     }, 1000);
@@ -198,7 +197,7 @@ medbtn.addEventListener('click', function () {
       clearInterval(timerRun);
       usernameInput.style.display = 'inline-block'
       submitbtn.style.display = 'inline-block'
-      hideYourNameHere.style.display = 'inline-block' 
+      hideYourNameHere.style.display = 'inline-block'
       endScreen();
     }
   }
@@ -240,13 +239,13 @@ medbtn.addEventListener('click', function () {
   }
   resetbtn.style.display = "inline-block"
   resetbtn.addEventListener('click', function () {
+    seconds = 0
     clearInterval(timerRun);
     timerRun = setInterval(function () {
-      if (seconds === 0) {
+      if (seconds !== 999) {
         timerDiv.textContent = `Timer: ${seconds++}`;
       }
       else {
-        timerDiv.textContent = 'Timer: ' + 0;
         clearInterval(timerRun);
       }
     }, 1000);
@@ -314,7 +313,7 @@ hardbtn.addEventListener('click', function () {
       clearInterval(timerRun);
       usernameInput.style.display = 'inline-block';
       submitbtn.style.display = 'inline-block';
-      hideYourNameHere.style.display = 'inline-block'; 
+      hideYourNameHere.style.display = 'inline-block';
       endScreen();
     }
   }
@@ -356,14 +355,13 @@ hardbtn.addEventListener('click', function () {
   }
   resetbtn.style.display = "inline-block"
   resetbtn.addEventListener('click', function () {
-    seconds = 300;
+    seconds = 0
     clearInterval(timerRun);
     timerRun = setInterval(function () {
-      if (seconds !== 0) {
-        timerDiv.textContent = `Timer: ${seconds--}`;
+      if (seconds !== 999) {
+        timerDiv.textContent = `Timer: ${seconds++}`;
       }
       else {
-        timerDiv.textContent = 'Timer: ' + 0;
         clearInterval(timerRun);
       }
     }, 1000);
@@ -372,11 +370,14 @@ hardbtn.addEventListener('click', function () {
 });
 function endScreen() {
   // Get the modal
+  namesArray = [];
   submitbtn.addEventListener('click', function (event) {
     event.preventDefault();
     var userinput = usernameInput.value;
-    localStorage.setItem('Name', userinput);
-    localStorage.setItem('Score', seconds);
+    var uils = localStorage.setItem('Name', userinput);
+    var sls = localStorage.setItem('Score', seconds);
+    namesArray.push(uils, sls);
+    console.log(namesArray);
   })
   var modal = document.getElementById("myModal");
   // Get the <span> element that closes the modal

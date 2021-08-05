@@ -44,7 +44,9 @@ BODY {
   button {
     margin: 12px;
   }
-
+  button:hover {
+    cursor: pointer;
+  }
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
