@@ -9,3 +9,7 @@
 .row {
     border: 1px solid black;
 }
+
+.col-sm-3 {
+    padding: 10px;
+}
