@@ -5,14 +5,22 @@ var easybtn = document.getElementById('easy');
 var medbtn = document.getElementById('med');
 var hardbtn = document.getElementById('hard');
 var resetbtn = document.getElementById('reset');
-//var tdEl = document.querySelector('td');
-const bombimg = document.createElement('img');
-bombimg.src = 'Assets/images/bomb.png'
-const flagimg = document.createElement('img');
-function endScreen() {
-  
-}
-easybtn.addEventListener('click', function (event) {
+var timerScore = document.getElementById('timerscore');
+var timerDiv = document.getElementById('timer');
+
+easybtn.addEventListener('click', function () {
+  let seconds = 99;
+  timerDiv.innerHTML = '';
+
+  let timerRun = setInterval(function () {
+    if (seconds !== 0) {
+      timerDiv.textContent = `Timer: ${seconds--}`;
+    }
+    else {
+      timerDiv.textContent = 'Timer: ' + 0;
+      clearInterval(timerRun);
+    }
+  }, 1000);
   generateGrid();
   function generateGrid() {
     //generate 9 by 9 grid
@@ -60,8 +68,10 @@ easybtn.addEventListener('click', function (event) {
       }
     }
     if (levelComplete) {
-      alert("You Win!");
       revealMines();
+      timerScore.innerText = seconds;
+      clearInterval(timerRun);
+      endScreen();
     }
   }
 
@@ -69,8 +79,11 @@ easybtn.addEventListener('click', function (event) {
     //Check if the end-user clicked on a mine
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
-      alert("Game Over");
-    } else if (cell === 'red') { }
+      timerScore.innerText = '0, You blew up.'
+      clearInterval(timerRun)
+      endScreen();
+      timerDiv.textContent = 'Timer: 0';
+    }
     else {
       cell.className = "clicked";
       //Count and display the number of adjacent mines
@@ -101,9 +114,33 @@ easybtn.addEventListener('click', function (event) {
     rightclickFlag(cell);
   }
   resetbtn.style.display = "inline-block"
-  resetbtn.addEventListener('click', generateGrid)
+  resetbtn.addEventListener('click', function () {
+    seconds = 99;
+    clearInterval(timerRun);
+    timerRun = setInterval(function () {
+      if (seconds !== 0) {
+        timerDiv.textContent = `Timer: ${seconds--}`;
+      }
+      else {
+        timerDiv.textContent = 'Timer: ' + 0;
+        clearInterval(timerRun);
+      }
+    }, 1000);
+    generateGrid();
+  })
 });
-medbtn.addEventListener('click', function (event) {
+medbtn.addEventListener('click', function () {
+  var seconds = 200;
+
+  var timerRun = setInterval(function () {
+    if (seconds !== 0) {
+      timerDiv.textContent = `Timer: ${seconds--}`;
+    }
+    else {
+      timerDiv.textContent = 'Timer: ' + 0;
+      clearInterval(timerRun);
+    }
+  }, 1000);
   generateGrid();
   function generateGrid() {
     //generate 16 by 16 grid
@@ -150,8 +187,10 @@ medbtn.addEventListener('click', function (event) {
       }
     }
     if (levelComplete) {
-      alert("You Win!");
       revealMines();
+      timerScore.innerText = seconds;
+      clearInterval(timerRun);
+      endScreen();
     }
   }
 
@@ -159,7 +198,10 @@ medbtn.addEventListener('click', function (event) {
     //Check if the end-user clicked on a mine
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
-      alert("Game Over");
+      clearInterval(timerRun);
+      timerScore.textContent = "0, You blew up."
+      endScreen();
+      timerDiv.textContent = 'Timer: 0';
     } else if (cell === 'red') { }
     else {
       cell.className = "clicked";
@@ -188,9 +230,34 @@ medbtn.addEventListener('click', function (event) {
     }
   }
   resetbtn.style.display = "inline-block"
-  resetbtn.addEventListener('click', generateGrid)
+  resetbtn.addEventListener('click', function() {
+    seconds = 200;
+    clearInterval(timerRun);
+    timerRun = setInterval(function () {
+      if (seconds !== 0) {
+        timerDiv.textContent = `Timer: ${seconds--}`;
+      }
+      else {
+        timerDiv.textContent = 'Timer: ' + 0;
+        clearInterval(timerRun);
+      }
+    }, 1000);
+    generateGrid();
+  })
 });
 hardbtn.addEventListener('click', function () {
+  var seconds = 300;
+  timerDiv.innerHTML = '';
+
+  var timerRun = setInterval(function () {
+    if (seconds !== 0) {
+      timerDiv.textContent = `Timer: ${seconds--}`;
+    }
+    else {
+      timerDiv.textContent = 'Timer: ' + 0;
+      clearInterval(timerRun);
+    }
+  }, 1000);
   generateGrid();
   function generateGrid() {
     //generate 16 by 30 grid
@@ -237,8 +304,10 @@ hardbtn.addEventListener('click', function () {
       }
     }
     if (levelComplete) {
-      alert("You Win!");
       revealMines();
+      timerScore.innerText = seconds;
+      clearInterval(timerRun);
+      endScreen();
     }
   }
 
@@ -246,8 +315,11 @@ hardbtn.addEventListener('click', function () {
     //Check if the end-user clicked on a mine
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
-      
-    } else if (cell === 'red') { }
+      clearInterval(timerRun);
+      timerScore.textContent = "0, You blew up."
+      endScreen();
+      timerDiv.textContent = 'Timer: 0';
+    }
     else {
       cell.className = "clicked";
       //Count and display the number of adjacent mines
@@ -275,13 +347,43 @@ hardbtn.addEventListener('click', function () {
     }
   }
   resetbtn.style.display = "inline-block"
-  resetbtn.addEventListener('click', generateGrid)
+  resetbtn.addEventListener('click', function() {
+    seconds = 300;
+    clearInterval(timerRun);
+    timerRun = setInterval(function () {
+      if (seconds !== 0) {
+        timerDiv.textContent = `Timer: ${seconds--}`;
+      }
+      else {
+        timerDiv.textContent = 'Timer: ' + 0;
+        clearInterval(timerRun);
+      }
+    }, 1000);
+    generateGrid();
+  })
 });
 function rightclickFlag() {
-  window.addEventListener('contextmenu', function (ev) {
+  document.addEventListener('contextmenu', function (ev) {
     ev.preventDefault();
     alert('success!');
     return false;
   }, false);
 }
-
+function endScreen() {
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  // When the user clicks the button, open the modal 
+  modal.style.display = "block";
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+}

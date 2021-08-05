@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Minesweeper</title>
     <link rel="stylesheet" href="Assets/css/style.css">
 </head>
+
 <body>
     <div class="containerMain">
         <div id="titleDiv">
@@ -16,6 +18,7 @@
             <button id="easy" style="display: inline-block">Easy 9x9</button>
             <button id="med" style="display: inline-block">Medium 16x16</button>
             <button id="hard" style="display: inline-block">Hard 16x30</button>
+            <p id="timer"></p>
         </div>
         <div id="mainContent">
             <table id=grid>
@@ -23,6 +26,13 @@
         </div>
         <button id="reset" style="display: none;">Reset Grid</button>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Game Over!<br>Your Score is:<div id="timerscore"></div><br>click Reset or another difficulty to try again.</p>
+        </div>
+    </div>
     <script src="Assets/js/minesweeper.js"></script>
 </body>
+
 </html>
