@@ -25,4 +25,5 @@ async function newFormHandler(event) {
         window.alert("Message failed to send");
     }
 }
+
 document.getElementById("new-msg-form").addEventListener("submit", newFormHandler);
