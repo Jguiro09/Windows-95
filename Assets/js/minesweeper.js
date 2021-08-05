@@ -9,6 +9,9 @@ var resetbtn = document.getElementById('reset');
 const bombimg = document.createElement('img');
 bombimg.src = 'Assets/images/bomb.png'
 const flagimg = document.createElement('img');
+function endScreen() {
+  
+}
 easybtn.addEventListener('click', function (event) {
   generateGrid();
   function generateGrid() {
@@ -30,6 +33,7 @@ easybtn.addEventListener('click', function (event) {
   function addMines() {
     //Add mines randomly
     for (var i = 0; i < 10; i++) {
+
       var row = Math.floor(Math.random() * 9);
       var col = Math.floor(Math.random() * 9);
       var cell = grid.rows[row].cells[col];
@@ -242,7 +246,7 @@ hardbtn.addEventListener('click', function () {
     //Check if the end-user clicked on a mine
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
-      alert("Game Over");
+      
     } else if (cell === 'red') { }
     else {
       cell.className = "clicked";
