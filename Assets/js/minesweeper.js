@@ -15,6 +15,9 @@ var highscoresTEXT = document.getElementById('highscoreTEXT');
 var hideYourNameHere = document.getElementById('hideName');
 let seconds = 0;
 
+//todo List;
+//Highscores go to bottom of page in highest to lowest
+
 easybtn.addEventListener('click', function () {
   let timerRun = setInterval(function () {
     if (seconds !== 999) {
