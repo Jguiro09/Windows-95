@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
-    
+    res.render('desktop');
 });
 
 // GET one gallery
