@@ -12,4 +12,8 @@ router.get('/login', (req, res) => {
 
 });
 
+router.get('/snake', (req, res) => {
+    res.render('snake')
+});
+
 module.exports = router;
