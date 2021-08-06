@@ -15,5 +15,8 @@ router.get('/login', (req, res) => {
 router.get('/snake', (req, res) => {
     res.render('snake')
 });
+router.get('/minesweeper', (req, res) => {
+    res.render('minesweeper')
+});
 
 module.exports = router;

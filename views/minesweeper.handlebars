@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="/css/sweeper.css">
+<link rel="stylesheet" type="text/css" href="/css/desktop.css">
+<link rel="stylesheet" href="https://trevor-reznik.github.io/guides/windows95-modal/windows95-modal.css"/>
+
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between start">
+    <ul class="navbar-nav navbar-nav-hover flex-row align-items-center">
+        <li class="nav-item">
+            <a href="../index.html" class="nav-link" role="button">
+                <span class="nav-link-inner-text start_logo"> <span class="nav-link-inner-text logo"> </span>Start</span>
+            </a>
+        </li>
+        <li class="nav-item">
+
+        </li>
+    </ul>
+    <div class="time text-center">
+        1:47 PM
+    </div>
+</nav>
+
+
+<body>
+    <div class="containerMain">
+        <div id="titleDiv">
+            <p>
+                Minesweeper!
+            </p>
+            <button id="easy" style="display: inline-block">Easy 9x9</button>
+            <button id="med" style="display: inline-block">Medium 16x16</button>
+            <button id="hard" style="display: inline-block">Hard 16x30</button>
+            <p id="timer"></p>
+        </div>
+        <div id="mainContent">
+            <table id=grid>
+            </table>
+        </div>
+        <button id="reset" style="display: none;">Reset Grid</button>
+    </div>
+{{!--     
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Game Over!<br>Your Score is:
+            <div id="timerscore"></div>
+            <br><span id="hideName" style="display: none;">Your Name Here</span><br>
+            <form>
+                <input style="" id="scoreName" type="text"><input style="display: none;" id="submitbtn" type="submit">
+            </form>
+            <br><br>
+            click Reset or another difficulty to try again.
+            </p>
+        </div>
+    
+    <div id="scoresDiv">
+        <h1 id="highscoresTEXT">Highscores:</h1>
+        <p id='scores' ></p>
+    </div> --}}
+    <script src="js/minesweeper.js"></script>
+</body>
