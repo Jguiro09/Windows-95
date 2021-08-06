@@ -93,7 +93,7 @@ body{
 }
 .minedsweeper {
     top: 25px;
-    left: 110px;
+    left: 120px;
 }
 .minedsweeper__icon {
       width: 50px;
@@ -102,7 +102,7 @@ body{
 }
 .pong {
     top: 120px;
-    left: 110px;
+    left: 120px;
 }
 .pong__icon {
       width: 50px;
@@ -112,7 +112,7 @@ body{
 }
 .trail {
     top: 220px;
-    left: 110px;
+    left: 120px;
 }
 .trail__icon {
       width: 50px;
@@ -129,12 +129,12 @@ body{
       background-size: contain;
     
 }
-.score {
+.note {
     top: 120px;
     right: 10px;
 }
-.score__icon {
+.note__icon {
       width: 50px;
-      background: url("https://telegram-stickers.github.io/public/stickers/windows-95/30.png");
+      background: url("https://telegram-stickers.github.io/public/stickers/windows-95/3.png");
       background-size: contain;
 }
