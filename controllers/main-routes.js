@@ -4,7 +4,7 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all galleries for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     res.render('desktop');
 });
 
