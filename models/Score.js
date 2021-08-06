@@ -11,16 +11,19 @@ Score.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     win: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
     },
+
     lose: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
     },
+
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -29,6 +32,7 @@ Score.init(
         key: 'id',
       },
     },
+    
   },
   {
     sequelize,

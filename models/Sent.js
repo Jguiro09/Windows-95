@@ -11,6 +11,7 @@ Sent.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -18,6 +19,7 @@ Sent.init(
         len: [45],
       },
     },
+
     recipent: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -25,10 +27,12 @@ Sent.init(
         len: [45],
       },
     },
+
     body: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -36,6 +40,7 @@ Sent.init(
         key: 'id',
       },
     },
+    
   },
   {
     sequelize,

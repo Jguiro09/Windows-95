@@ -15,6 +15,7 @@ Sent.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
+
 User.hasMany(Sent, {
   foreignKey: 'user_id',
 });

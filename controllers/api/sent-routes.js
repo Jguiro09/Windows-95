@@ -47,18 +47,4 @@ router.put('/:id', (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
-  try {
-    const deleted = Sent.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.status(200).json(deleted);
-    }
-    catch (err) {
-      res.status(500).json(err);
-    }
-});
-
 module.exports = router;

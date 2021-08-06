@@ -11,6 +11,7 @@ Program.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -18,6 +19,7 @@ Program.init(
         len: [50],
       },
     },
+
     img_src: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -25,6 +27,7 @@ Program.init(
         len: [50],
       },
     },
+    
     html_file: {
       type: DataTypes.STRING,
       allowNull: false,
