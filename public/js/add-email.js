@@ -6,7 +6,7 @@ async function newFormHandler(event) {
     const subject = document.getElementById("subject-box").value.trim();
     const msg = document.getElementById("msg-box").value.trim();
     //send fetch request to add a new email message
-    const response = await fetch("/api/msg", {
+    const response = await fetch("/api/sent", {
         //here we're using POST method because we are CREATING or ADDING a new message to the database
         method: "POST",
         body: JSON.stringify({
@@ -25,4 +25,5 @@ async function newFormHandler(event) {
         window.alert("Message failed to send");
     }
 }
+
 document.getElementById("new-msg-form").addEventListener("submit", newFormHandler);

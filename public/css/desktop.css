@@ -1,0 +1,83 @@
+body{
+    background-color: #008081;
+}
+.start{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 40px;
+}
+.logo{
+    width: 35px;
+    height: 18px;
+    position: relative;
+      content: "";
+      background: url(https://banner2.kisspng.com/20180821/hrt/kisspng-windows-95-windows-98-microsoft-windows-transparen-windows-95-telegram-stickers-directory-5b7c3cffc178a8.4526616315348687357925.jpg) transparent;
+      background-size: contain;
+      mix-blend-mode: multiply;
+      top: 5px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+  }
+
+  .start_logo{
+      padding-left: 1.2vw;
+  }
+
+  .desktop-icon {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+  .desktop-icon__icon {
+      height: 50px;
+    }
+    
+.desktop-icon__text {
+      color: white;
+      font-size: 12px;
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+    
+.desktop-icon:hover {
+      cursor: pointer;
+}
+
+.computer {
+    top: 20px;
+    left: 10px;
+  }
+    
+.computer__icon {
+      width: 55px;
+      background: url("https://www.pngkey.com/png/full/44-448393_windows-95-icons-png-picture-free-stock-icon.png");
+      background-size: contain;
+}
+    
+.recycle {
+    top: 120px;
+    left: 10px;
+}
+.recycle__icon {
+      width: 53px;
+      background: url("https://telegram-stickers.github.io/public/stickers/windows-95/27.png");
+      background-size: contain;
+    
+}
+.clippy {
+    top: 220px;
+    left: 10px;
+}
+.clippy__icon {
+      width: 53px;
+      background: url("https://png2.cleanpng.com/sh/7a201a0721ae872507bf635989d520a9/L0KzQYm3WMI0N5RskJH0aYP2gLBuTf9nbppofZ9qc4Psg8XojwQudZpoitH8b3b3PbT2kwBwepJ5gdH3LX3sc8P2kB9nfF50Rd9yY4Lyg7FtlL1wbpdue9c2Mj20SX76TfNpNZkyjOQ2dILxPYbpVBU1PWhrTqkANUO3Pom9UsU6QGQ9Sac8NUCzQYqBU8QzO2QziNDw/kisspng-office-assistant-microsoft-corporation-microsoft-o-microsoft-office-2-19-s-ch-h-tr-trn-5b7e457f675534.8625983815350019834233.png") no-repeat;
+      background-size: contain;
+      
+}

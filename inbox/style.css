@@ -1,0 +1,15 @@
+.to-box {}
+
+.subject-box {}
+
+.msg-box {}
+
+.submit {}
+
+.row {
+    border: 1px solid black;
+}
+
+.col-sm-3 {
+    padding: 10px;
+}

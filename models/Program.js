@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Sent extends Model {}
+class Program extends Model {}
 
-Sent.init(
+Program.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,38 +16,32 @@ Sent.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [45],
+        len: [50],
       },
     },
 
-    recipent: {
+    img_src: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [45],
-      },
-    },
-
-    body: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
+        len: [50],
       },
     },
     
+    html_file: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [50],
+      },
+    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'sent',
+    modelName: 'program',
   }
 );
 
-module.exports = Sent;
+module.exports = Program;
