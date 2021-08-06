@@ -32,7 +32,12 @@ Score.init(
         key: 'id',
       },
     },
-    
+
+    score_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
+
   },
   {
     sequelize,

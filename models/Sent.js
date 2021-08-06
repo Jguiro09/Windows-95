@@ -40,7 +40,6 @@ Sent.init(
         key: 'id',
       },
     },
-    
   },
   {
     sequelize,
