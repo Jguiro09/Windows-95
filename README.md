@@ -29,12 +29,12 @@ This project was made possible with Visual Studio Code, Git, HTML, CSS, Javascri
 
 ## Credits
 
-This project was made possible thanks to the following people
-Derek Hernandez - https://github.com/HernandezDerekJ
-Jacob Guiro - https://github.com/Jguiro09
-Thomas Limmer - https://github.com/TLimmer19
-Marie Valdovinos - https://github.com/mevaldovi
-Evan Ebert - https://github.com/evan-ebert17
+This project was made possible thanks to the following people  
+Derek Hernandez - https://github.com/HernandezDerekJ  
+Jacob Guiro - https://github.com/Jguiro09  
+Thomas Limmer - https://github.com/TLimmer19  
+Marie Valdovinos - https://github.com/mevaldovi  
+Evan Ebert - https://github.com/evan-ebert17  
 
 
 
