@@ -1,0 +1,29 @@
+#snakepanel {
+    position: relative;
+    top: 50%;
+}
+
+#score {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1vh;
+}
+
+.myCardBody{
+    padding: 10px 7px;
+}
+
+.hidden {
+    display: none;
+}
+
+.myBody{
+    position: relative;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 10px 7px;
+}
+
+.close{
+    opacity: 1;
+}

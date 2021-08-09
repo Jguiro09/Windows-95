@@ -1,0 +1,22 @@
+{{> nav}}
+
+    <section class = "col-12 col-lg-12 mb-4 mb-lg-0 myModal mx-auto">
+        <div class="card card-tertiary">
+            <header class="card-header">
+                <span class="icon icon-xs w95-folder"></span>
+                <span class="ml-4">User Info</span>
+                <a href = "/" <button class="toolbar-btn close" style = "float: right;"></button></a>
+            </header>
+            <main class="myCardBody" style = "width: 400px; height: 400px;">
+                Username: {{name.dataValues.username}} <br>
+                <br>
+                SCORES: <br>
+                MineSweeper: {{minesweeper.dataValues.score}} <br>
+                Snake: {{snake.dataValues.score}}
+                <br> <br>
+                <button class = "btn btn-primary mx-auto mb-1" id = "logout" style = "width: 50%;">LOGOUT</button>
+                <button class = "btn btn-danger mx-auto mb-1" id = "delete" style = "width: 50%;">DELETE</button>
+        </div>
+    </section>
+
+    <script src = "./js/logout.js"

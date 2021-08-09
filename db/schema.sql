@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS windows_db;
+
+CREATE DATABASE windows_db;

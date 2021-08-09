@@ -1,0 +1,38 @@
+body{
+    background-color: #018184;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.hidden {
+    display: none;
+}
+
+.myBody{
+    position: relative;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 15px;
+}
+
+.close{
+    opacity: 1;
+}
+
+.myLogin {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 35%;
+}
+
+.myModal{
+    width: fit-content;
+}
+
+.myCardBody{
+    padding: 10px 7px;
+}

@@ -1,0 +1,102 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+BODY {
+    color: #DDDDDD;
+  }
+  
+  H1 {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+  }
+  #grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.scalecontent {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+  #grid TR TD {
+    border:1px solid white;
+    background: #999999;
+    max-width: 100%;
+    max-height: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+  }
+  
+  #grid TR TD.clicked {
+      background: #333333;
+  }
+  
+  #grid TR TD.mine {
+      background: #FF0000;
+  }
+  
+  button {
+    margin: 12px;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#timer {
+  height: 18px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  color: #333333;
+  width: 80%; /* Could be more or less, depending on screen size */
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* #scoreName {
+
+} */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
