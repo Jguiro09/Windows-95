@@ -1,4 +1,4 @@
-# # Windows 95
+# Windows 95
 
 [Github](https://github.com/Jguiro09/Windows-95)
 [Heroku Deployed](https://windows-95-uta.herokuapp.com/login)
