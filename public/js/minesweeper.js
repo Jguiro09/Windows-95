@@ -15,9 +15,6 @@ var highscoresTEXT = document.getElementById('highscoreTEXT');
 var hideYourNameHere = document.getElementById('hideName');
 let seconds = 0;
 
-//todo List;
-//Highscores go to bottom of page in highest to lowest
-
 easybtn.addEventListener('click', function () {
   let timerRun = setInterval(function () {
     if (seconds !== 999) {
@@ -28,7 +25,6 @@ easybtn.addEventListener('click', function () {
       clearInterval(timerRun);
     }
   }, 1000);
-  console.log(timerRun);
   generateGrid();
   function generateGrid() {
     //generate 9 by 9 grid
@@ -99,7 +95,6 @@ easybtn.addEventListener('click', function () {
       var mineCount = 0;
       var cellRow = cell.parentNode.rowIndex;
       var cellCol = cell.cellIndex;
-      //alert(cellRow + " " + cellCol);
       for (var i = Math.max(cellRow - 1, 0); i <= Math.min(cellRow + 1, 8); i++) {
         for (var j = Math.max(cellCol - 1, 0); j <= Math.min(cellCol + 1, 8); j++) {
           if (grid.rows[i].cells[j].getAttribute("data-mine") == "true") mineCount++;
@@ -213,7 +208,6 @@ medbtn.addEventListener('click', function () {
       var mineCount = 0;
       var cellRow = cell.parentNode.rowIndex;
       var cellCol = cell.cellIndex;
-      //alert(cellRow + " " + cellCol);
       for (var i = Math.max(cellRow - 1, 0); i <= Math.min(cellRow + 1, 15); i++) {
         for (var j = Math.max(cellCol - 1, 0); j <= Math.min(cellCol + 1, 15); j++) {
           if (grid.rows[i].cells[j].getAttribute("data-mine") == "true") mineCount++;
@@ -324,7 +318,6 @@ hardbtn.addEventListener('click', function () {
       var mineCount = 0; mineCount.className = 'invisZero';
       var cellRow = cell.parentNode.rowIndex;
       var cellCol = cell.cellIndex;
-      //alert(cellRow + " " + cellCol);
       for (var i = Math.max(cellRow - 1, 0); i <= Math.min(cellRow + 1, 15); i++) {
         for (var j = Math.max(cellCol - 1, 0); j <= Math.min(cellCol + 1, 29); j++) {
           if (grid.rows[i].cells[j].getAttribute("data-mine") == "true") mineCount++;
@@ -372,32 +365,8 @@ async function endScreen() {
     });
 
     if (response.ok) {
-      alert('Score Saved?')
+      alert('Score Saved in "User"')
     } else {
       alert('Didnt work');
     }
-  // namesArray = [];
-  // submitbtn.addEventListener('click', function (event) {
-  //   event.preventDefault();
-  //   var userinput = usernameInput.value;
-  //   var uils = localStorage.setItem('Name', userinput);
-  //   var sls = localStorage.setItem('Score', seconds);
-  //   namesArray.push(uils, sls);
-  //   console.log(namesArray);
-  // })
-  // var modal = document.getElementById("myModal");
-  // // Get the <span> element that closes the modal
-  // var span = document.getElementsByClassName("close")[0];
-  // // When the user clicks the button, open the modal 
-  // modal.style.display = "block";
-  // // When the user clicks on <span> (x), close the modal
-  // span.onclick = function () {
-  //   modal.style.display = "none";
-  // }
-  // // When the user clicks anywhere outside of the modal, close it
-  // window.onclick = function (event) {
-  //   if (event.target == modal) {
-  //     modal.style.display = "none";
-  //   }
-  // }
 }

@@ -3,6 +3,7 @@ let aiPaddle;
 let ball;
 let playerScore;
 let aiScore;
+let c = document.querySelector("#pongPanel")
 
 function setup() {
     createCanvas(624, 351);

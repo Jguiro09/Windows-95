@@ -1,25 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-dark justify-content-between start">
-    <ul class="navbar-nav navbar-nav-hover flex-row align-items-center">
-        <li class="nav-item">
-            <a href="../index.html" class="nav-link" role="button">
-                <span class="nav-link-inner-text start_logo"> <span class="nav-link-inner-text logo"> </span>Start</span>
-            </a>
-        </li>
-        <li class="nav-item">
-
-        </li>
-    </ul>
-    <div class="time text-center">
-        1:47 PM
-    </div>
-</nav>
+{{> nav}}
 
     <section class = "col-12 col-lg-12 mb-4 mb-lg-0 myModal mx-auto">
         <div class="card card-tertiary">
             <header class="card-header">
                 <span class="icon icon-xs w95-folder"></span>
                 <span class="ml-4">Notepad</span>
-                <a href = "/" <button class="toolbar-btn close" style = "float: right;">></button></a>
+                <a href = "/" <button class="toolbar-btn close" style = "float: right;"></button></a>
             </header>
             <main class="myCardBody">
                 <textarea id = "body" style = "width: 400px; height: 400px">{{userNote.dataValues.body}}</textarea>               

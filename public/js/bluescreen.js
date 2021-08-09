@@ -17,5 +17,4 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'd') {
       document.body.style = " background-color: #111111";
     }
-    //Do something
   });

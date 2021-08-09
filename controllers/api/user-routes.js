@@ -1,21 +1,9 @@
 const router = require('express').Router();
 const { User, Score, Note } = require('../../models');
 
-// CREATE new user
-router.get('/', async(req, res) => {
-  try {
-    const allUser = await User.findAll();
-    res.status(200).json(allUser);
-  } 
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 router.post('/', async (req, res) => {
   try {
-    console.log(req.body);
-    console.log(req.body.username);
     const newUser = await User.create({
       username: req.body.username,
       password: req.body.password,
@@ -35,7 +23,7 @@ router.post('/', async (req, res) => {
 
   Note.create({
     body: "REMOVE THIS TEXT AND TYPE HERE!",
-    user_id: 1
+    user_id: newUser.id
   });
 
   req.session.save(() => {

@@ -1,8 +1,6 @@
 const save = async () => {
     const body = document.querySelector('#body').value.trim();
 
-    console.log(body);
-
     const response = await fetch('/api/note', {
       method: 'PUT',
       body: JSON.stringify({ body }),
@@ -12,7 +10,7 @@ const save = async () => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Failed to log out.');
+      alert('Failed to save note.');
     }
   };
   

@@ -25,8 +25,6 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    console.log(req.body)
-    console.log(req.session.user_id)
     const newScore = await Score.create({
       score: req.body.finalScore,
       user_id: req.session.user_id,

@@ -8,7 +8,7 @@ router.get('/', withAuth, async (req, res) => {
     res.render('desktop');
 });
 
-router.get('/user', async (req, res) => {
+router.get('/user', withAuth, async (req, res) => {
     let name = await User.findOne({
         where: {
             id: req.session.user_id,
@@ -28,35 +28,31 @@ router.get('/user', async (req, res) => {
             user_id: req.session.user_id
         }
     })
-    console.log(name);
-    console.log(snake);
     res.render('user', {name, snake, minesweeper});
 });
 
-router.get('/snake', (req, res) => {
+router.get('/snake', withAuth, (req, res) => {
     res.render('snake')
 });
 
-router.get('/minesweeper', (req, res) => {
+router.get('/minesweeper',withAuth, (req, res) => {
     res.render('minesweeper');
 });
 
-router.get('/pong', (req, res) => {
+router.get('/pong',withAuth, (req, res) => {
     res.render('pong');
 });
 
-router.get('/trail', (req, res) => {
+router.get('/trail',withAuth, (req, res) => {
     res.render('trail');
 });
 
-router.get('/note', async (req,res) => {
+router.get('/note',withAuth, async (req,res) => {
     let userNote = await Note.findOne({
         where: {
             user_id: req.session.user_id
         }
     })
-
-    console.log(userNote)
     res.render('note', {userNote})
 })
 

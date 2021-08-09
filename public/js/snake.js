@@ -60,9 +60,9 @@ async function main() {
           });
       
           if (response.ok) {
-            alert('Score Saved?')
+            alert('Score Saved in "User"')
           } else {
-            alert('Didnt work');
+            alert('Your score was not saved');
           }
         return;
     }

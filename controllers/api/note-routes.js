@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 
 router.put('/', async (req, res) => {
   try {
-    console.log(req.body)
     const updateNote   = await Note.update({
       body: req.body.body,
     }, {
