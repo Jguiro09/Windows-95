@@ -4,7 +4,7 @@
 [Heroku Deployed](https://windows-95-uta.herokuapp.com/login)
 
 
- ## Screen Shots
+ ## Screenshot
  ![alt text](public/images/Heroku_W95.PNG)
 
 
