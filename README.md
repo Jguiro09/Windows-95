@@ -5,7 +5,7 @@
 
 
  ## Screen Shots
- ![alt text](assets\images\Heroku_W95.PNG)
+ ![alt text](public\images\Heroku_W95.PNG)
 
 
 
