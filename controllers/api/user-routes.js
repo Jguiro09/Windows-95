@@ -1,21 +1,11 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Score, Note } = require('../../models');
 
 // CREATE new user
 router.get('/', async(req, res) => {
   try {
     const allUser = await User.findAll();
     res.status(200).json(allUser);
-  } 
-  catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/:id', async (req, res) => {
-  try {
-    const findUser = await User.findByPk(req.params.id);
-    res.status(200).json(findUser);
   } 
   catch (err) {
     res.status(500).json(err);
@@ -31,8 +21,26 @@ router.post('/', async (req, res) => {
       password: req.body.password,
   });
 
+  Score.create({
+    score: 0,
+    user_id: newUser.id,
+    game_id: 1,
+  });
+
+  Score.create({
+    score: 0,
+    user_id: newUser.id,
+    game_id: 2,
+  });
+
+  Note.create({
+    body: "REMOVE THIS TEXT AND TYPE HERE!",
+    user_id: 1
+  });
+
   req.session.save(() => {
     req.session.loggedIn = true;
+    req.session.user_id = newUser.id;
     res.status(200).json(newUser);  
   })
   }
@@ -80,25 +88,23 @@ router.post('/login', async (req, res) => {
   }
 })
 
-router.put('/:id', (req, res) => {
-  try {
-    const updateUser = User.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.status(200).json(updateUser);
-  } 
-  catch (err) {
-    res.status(500).json(err);
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+      req.session.destroy(() => {
+          res.status(204).end();
+      });
   }
-});
 
-router.delete('/:id', (req, res) => {
+  else {
+      res.status(404).end();
+  }
+})
+
+router.delete('/delete', (req, res) => {
   try {
     const deleted = User.destroy({
       where: {
-        id: req.params.id,
+        id: req.session.user_id,
       },
     });
     res.status(200).json(deleted);

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Score } = require('../../models');
+const { update } = require('../../models/User');
 
 // CREATE new Score
 router.get('/', async(req, res) => {
@@ -24,7 +25,13 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newScore = await Score.create(req.body);
+    console.log(req.body)
+    console.log(req.session.user_id)
+    const newScore = await Score.create({
+      score: req.body.finalScore,
+      user_id: req.session.user_id,
+      game_id: req.body.game_id,
+    });
     res.status(200).json(newScore);
   }
   catch (err) {
@@ -32,21 +39,29 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/', async (req, res) => {
   try {
-    const updateScore = Score.update(req.body, {
+    const updateScore = await Score.update(
+      {
+        score: req.body.finalScore
+      },
+      {
       where: {
-        id: req.params.id,
+        game_id: req.body.game_id,
+        user_id: req.session.user_id,
       },
     });
-    res.status(200).json(updateScore);
+
+    req.session.save(() => {
+      res.status(200).json(updateScore);
+  })
   } 
   catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/', (req, res) => {
   try {
     const deleted = Score.destroy({
       where: {

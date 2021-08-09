@@ -77,7 +77,6 @@ easybtn.addEventListener('click', function () {
     }
     if (levelComplete) {
       revealMines();
-      timerScore.innerText = seconds;
       clearInterval(timerRun);
       usernameInput.style.display = 'inline-block'
       submitbtn.style.display = 'inline-block'
@@ -90,7 +89,6 @@ easybtn.addEventListener('click', function () {
     //Check if the end-user clicked on a mine
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
-      timerScore.innerText = '0, You blew up.'
       clearInterval(timerRun)
       endScreen();
       timerDiv.textContent = 'Timer: 0';
@@ -196,11 +194,7 @@ medbtn.addEventListener('click', function () {
     }
     if (levelComplete) {
       revealMines();
-      timerScore.innerText = seconds;
       clearInterval(timerRun);
-      usernameInput.style.display = 'inline-block'
-      submitbtn.style.display = 'inline-block'
-      hideYourNameHere.style.display = 'inline-block'
       endScreen();
     }
   }
@@ -210,7 +204,6 @@ medbtn.addEventListener('click', function () {
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
       clearInterval(timerRun);
-      timerScore.textContent = "0, You blew up."
       endScreen();
       timerDiv.textContent = 'Timer: 0';
     } else if (cell === 'red') { }
@@ -312,11 +305,7 @@ hardbtn.addEventListener('click', function () {
     }
     if (levelComplete) {
       revealMines();
-      timerScore.innerText = seconds;
       clearInterval(timerRun);
-      usernameInput.style.display = 'inline-block';
-      submitbtn.style.display = 'inline-block';
-      hideYourNameHere.style.display = 'inline-block';
       endScreen();
     }
   }
@@ -326,7 +315,6 @@ hardbtn.addEventListener('click', function () {
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
       clearInterval(timerRun);
-      timerScore.textContent = "0, You blew up."
       endScreen();
       timerDiv.textContent = 'Timer: 0';
     }
@@ -371,30 +359,45 @@ hardbtn.addEventListener('click', function () {
     generateGrid();
   })
 });
-function endScreen() {
+async function endScreen() {
   // Get the modal
-  namesArray = [];
-  submitbtn.addEventListener('click', function (event) {
-    event.preventDefault();
-    var userinput = usernameInput.value;
-    var uils = localStorage.setItem('Name', userinput);
-    var sls = localStorage.setItem('Score', seconds);
-    namesArray.push(uils, sls);
-    console.log(namesArray);
-  })
-  var modal = document.getElementById("myModal");
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  // When the user clicks the button, open the modal 
-  modal.style.display = "block";
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
-    modal.style.display = "none";
-  }
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+
+  let game_id = 2;
+  let finalScore = seconds;
+
+  const response = await fetch('/api/score', {
+      method: 'PUT',
+      body: JSON.stringify({ game_id, finalScore }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      alert('Score Saved?')
+    } else {
+      alert('Didnt work');
     }
-  }
+  // namesArray = [];
+  // submitbtn.addEventListener('click', function (event) {
+  //   event.preventDefault();
+  //   var userinput = usernameInput.value;
+  //   var uils = localStorage.setItem('Name', userinput);
+  //   var sls = localStorage.setItem('Score', seconds);
+  //   namesArray.push(uils, sls);
+  //   console.log(namesArray);
+  // })
+  // var modal = document.getElementById("myModal");
+  // // Get the <span> element that closes the modal
+  // var span = document.getElementsByClassName("close")[0];
+  // // When the user clicks the button, open the modal 
+  // modal.style.display = "block";
+  // // When the user clicks on <span> (x), close the modal
+  // span.onclick = function () {
+  //   modal.style.display = "none";
+  // }
+  // // When the user clicks anywhere outside of the modal, close it
+  // window.onclick = function (event) {
+  //   if (event.target == modal) {
+  //     modal.style.display = "none";
+  //   }
+  // }
 }
