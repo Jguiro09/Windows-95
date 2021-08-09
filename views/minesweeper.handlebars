@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/sweeper.css">
+
+{{> nav}}
+
+<section class = "col-12 col-lg-6 mb-4 mb-lg-0 myModal mx-auto">
+    <div class="card card-tertiary">
+        <header class="card-header">
+            <span class="icon icon-xs w95-folder"></span>
+            <span class="ml-4">MineSweeper</span>
+            <a href = "/"><button class="toolbar-btn close" style = "float: right;"></button></a>
+        </header>
+        <main class="myCardBody" >
+            <div class="containerMain">
+                <div id="titleDiv">
+                    <button id="easy" style="display: inline-block">Easy 9x9</button>
+                    <button id="med" style="display: inline-block">Medium 16x16</button>
+                    <button id="hard" style="display: inline-block">Hard 16x30</button>
+                    <p id="timer" style = "text-align: center;"></p>
+                </div>
+                <div id="mainContent">
+                    <table id=grid>
+                    </table>
+                </div>
+                <button id="reset" style="display: none;">Reset Grid</button>
+            </div>
+        </main>
+    </div>
+</section>
+{{!--     
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Game Over!<br>Your Score is:
+            <div id="timerscore"></div>
+            <br><span id="hideName" style="display: none;">Your Name Here</span><br>
+            <form>
+                <input style="" id="scoreName" type="text"><input style="display: none;" id="submitbtn" type="submit">
+            </form>
+            <br><br>
+            click Reset or another difficulty to try again.
+            </p>
+        </div>
+    
+    <div id="scoresDiv">
+        <h1 id="highscoresTEXT">Highscores:</h1>
+        <p id='scores' ></p>
+    </div> --}}
+    <script src="js/minesweeper.js"></script>

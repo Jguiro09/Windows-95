@@ -1,5 +1,6 @@
-body, main {
-    height: 100vh;
+body{
+    background-color: #018184;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 .hidden {
@@ -22,9 +23,16 @@ body, main {
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: #018184;
 }
 
 .login {
     width: 35%;
+}
+
+.myModal{
+    width: fit-content;
+}
+
+.myCardBody{
+    padding: 10px 7px;
 }

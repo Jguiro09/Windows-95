@@ -79,5 +79,62 @@ body{
       width: 53px;
       background: url("https://png2.cleanpng.com/sh/7a201a0721ae872507bf635989d520a9/L0KzQYm3WMI0N5RskJH0aYP2gLBuTf9nbppofZ9qc4Psg8XojwQudZpoitH8b3b3PbT2kwBwepJ5gdH3LX3sc8P2kB9nfF50Rd9yY4Lyg7FtlL1wbpdue9c2Mj20SX76TfNpNZkyjOQ2dILxPYbpVBU1PWhrTqkANUO3Pom9UsU6QGQ9Sac8NUCzQYqBU8QzO2QziNDw/kisspng-office-assistant-microsoft-corporation-microsoft-o-microsoft-office-2-19-s-ch-h-tr-trn-5b7e457f675534.8625983815350019834233.png") no-repeat;
       background-size: contain;
-      
+}
+
+.snake {
+    top: 320px;
+    left: 10px;
+}
+.snake__icon {
+      width: 50px;
+      background: url("https://d29fhpw069ctt2.cloudfront.net/icon/image/49284/preview.svg");
+      background-size: contain;
+    
+}
+.minedsweeper {
+    top: 25px;
+    left: 120px;
+}
+.minedsweeper__icon {
+      width: 50px;
+      background: url("https://styles.redditmedia.com/t5_2r4c3/styles/communityIcon_whz4tmbb4w061.png?width=256&s=b0bf76406b2241c3e6b2126a7cac31941619e94d");
+      background-size: contain;
+}
+.pong {
+    top: 120px;
+    left: 120px;
+}
+.pong__icon {
+      width: 50px;
+      background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ba9c676-afd3-4a71-8012-4f144cc6a7ac/d3bm9m6-13a5586d-965b-4c11-a3cb-ba2e00079d3a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBiYTljNjc2LWFmZDMtNGE3MS04MDEyLTRmMTQ0Y2M2YTdhY1wvZDNibTltNi0xM2E1NTg2ZC05NjViLTRjMTEtYTNjYi1iYTJlMDAwNzlkM2EucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Fmg_-myIFcwMSStoGokiErDEW1XAKWLaXzsLDu0Fuhc");
+      background-size: contain;
+    
+}
+.trail {
+    top: 220px;
+    left: 120px;
+}
+.trail__icon {
+      width: 50px;
+      background: url("https://img.pngio.com/oregon-trail-award-winning-ios-game-for-children-oregon-trail-png-201_201.png");
+      background-size: contain;
+}
+.user {
+    top: 20px;
+    right: 10px;
+}
+.user__icon {
+      width: 50px;
+      background: url("https://telegram-stickers.github.io/public/stickers/windows-95/24.png");
+      background-size: contain;
+    
+}
+.note {
+    top: 120px;
+    right: 10px;
+}
+.note__icon {
+      width: 50px;
+      background: url("https://telegram-stickers.github.io/public/stickers/windows-95/3.png");
+      background-size: contain;
 }
