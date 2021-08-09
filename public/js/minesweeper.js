@@ -86,6 +86,7 @@ easybtn.addEventListener('click', function () {
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
       clearInterval(timerRun)
+      seconds = 0;
       endScreen();
       timerDiv.textContent = 'Timer: 0';
     }
@@ -199,6 +200,7 @@ medbtn.addEventListener('click', function () {
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
       clearInterval(timerRun);
+      seconds = 0;
       endScreen();
       timerDiv.textContent = 'Timer: 0';
     } else if (cell === 'red') { }
@@ -309,6 +311,7 @@ hardbtn.addEventListener('click', function () {
     if (cell.getAttribute("data-mine") == "true") {
       revealMines();
       clearInterval(timerRun);
+      seconds = 0;
       endScreen();
       timerDiv.textContent = 'Timer: 0';
     }
@@ -353,7 +356,6 @@ hardbtn.addEventListener('click', function () {
   })
 });
 async function endScreen() {
-  // Get the modal
 
   let game_id = 2;
   let finalScore = seconds;
