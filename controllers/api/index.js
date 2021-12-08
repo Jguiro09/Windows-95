@@ -1,4 +1,9 @@
 const router = require('express').Router();
+const compression = require('compression');
+const express = require('express');
+const app = express();
+
+app.use(compression());
 
 const programRoutes = require('./program-routes');
 const userRoutes = require('./user-routes');
