@@ -11,17 +11,9 @@ Score.init(
       primaryKey: true,
       autoIncrement: true,
     },
-
-    win: {
+    score: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
-    },
-
-    lose: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0,
     },
 
     user_id: {
@@ -32,15 +24,14 @@ Score.init(
         key: 'id',
       },
     },
-
-    score_id: {
+    game_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
-
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'score',

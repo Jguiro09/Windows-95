@@ -47,8 +47,25 @@ generate_food();
 document.addEventListener("keydown", change_direction);
 
 // main is called repeatedly to keep game running
-function main() {
-    if (has_game_ended()) return;
+async function main() {
+    if (has_game_ended())
+    {
+        let game_id = 1;
+        let finalScore = score;
+
+        const response = await fetch('/api/score', {
+            method: 'PUT',
+            body: JSON.stringify({ game_id, finalScore }),
+            headers: { 'Content-Type': 'application/json' },
+          });
+      
+          if (response.ok) {
+            alert('Score Saved in "User"')
+          } else {
+            alert('Your score was not saved');
+          }
+        return;
+    }
 
     changing_direction = false;
     setTimeout(function onTick() {

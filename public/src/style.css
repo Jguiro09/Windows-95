@@ -28,3 +28,11 @@ body{
 .login {
     width: 35%;
 }
+
+.myModal{
+    width: fit-content;
+}
+
+.myCardBody{
+    padding: 10px 7px;
+}

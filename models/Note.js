@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Sent extends Model {}
+class Note extends Model {}
 
-Sent.init(
+Note.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,30 +11,14 @@ Sent.init(
       primaryKey: true,
       autoIncrement: true,
     },
-
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [45],
-      },
-    },
-
-    recipent: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [45],
-      },
-    },
-
     body: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
 
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
@@ -43,10 +27,11 @@ Sent.init(
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'sent',
+    modelName: 'note',
   }
 );
 
-module.exports = Sent;
+module.exports = Note;

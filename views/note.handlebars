@@ -1,0 +1,17 @@
+{{> nav}}
+
+    <section class = "col-12 col-lg-12 mb-4 mb-lg-0 myModal mx-auto">
+        <div class="card card-tertiary">
+            <header class="card-header">
+                <span class="icon icon-xs w95-folder"></span>
+                <span class="ml-4">Notepad</span>
+                <a href = "/" <button class="toolbar-btn close" style = "float: right;"></button></a>
+            </header>
+            <main class="myCardBody">
+                <textarea id = "body" style = "width: 400px; height: 400px">{{userNote.dataValues.body}}</textarea>               
+            </main>
+            <button class = "btn btn-primary mx-auto mb-1" id = "save" style = "width: 50%;">SAVE</button> 
+        </div>
+    </section>
+    
+    <script src = "./js/note.js"></script>
